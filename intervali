@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main()
+{
+	int a,b,c,d;
+	printf("napishete starta na 1 interval: \n");
+	scanf("%d",&a);
+	printf("napishete kraq na 1 interval: \n");
+	scanf("%d",&b);
+	printf("napishete starta na 2 interval: \n");
+	scanf("%d",&c);
+	printf("napishete kraq na 2 interval: \n");
+	scanf("%d",&d);
+	
+	if(a == c & b == d)
+	{
+		printf("intervalite sa ednakvi");
+	}
+	if(a < c && b>d )
+	{
+		printf("purviq interval sudurzha vtori interval");
+	}
+	if(c < a && d>b )
+	{
+		printf("vtoriq interval sudurzha purviq");
+	}
+	if(a <=c && c <=b && d>a && d>b)
+	{
+		printf("Intervalite se presichat.");
+	}
+	
+		
+	return 0;
+}
