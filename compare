@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+int x, y, z;
+printf("Vyvedi x: ");
+scanf("%d", &x);
+printf("Vyvedi y: ");
+scanf("%d", &y);
+printf("Vyvedi y: ");
+scanf("%d", &z);
+
+if(x ==0 || y == 0|| z == 0)
+{
+	printf("Pone edno chislo e = 0");
+}
+else if(x == z|| y == z || x == y )
+{
+	printf("Pone dve ot chislata sa ravni");
+}
+else
+{
+	printf("Nito ima chislo 0, nito ima 2 ravni chisla"); 
+}
+system ("pause");
+return 0;
