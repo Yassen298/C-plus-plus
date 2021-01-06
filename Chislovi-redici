@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+float arr[50];
+float redica(float x, float h, int n);
+void monotonnost();
+int main()
+{
+    float x, h;
+    int broj;
+    printf("Vavedete x: "); scanf("%f", &x);
+    printf("Vavedete h: "); scanf("%f", &h);
+    printf("Vavedete broj chlenove na redicata: ");
+    scanf("%d", &broj);
+    printf("Stojnost na redicata = %f\n", redica(x, h, broj));
+    monotonnost();
+    system("pause");
+    return 0;
+}
+float redica(float x, float h, int n)
+{
+    float sum, chislitel;
+    int i, znamenatel;
+    sum = 0;
+    i = 1;
+    chislitel = x;
+    znamenatel = 1;
+    while (i <= n)
+    {
+        chislitel += h;
+        znamenatel += 2;
+        sum = sum + chislitel / znamenatel;
+        arr[i] = sum;
+        printf("%f\n", arr[i]);
+        i++;
+    }
+    return sum;
+}
+void monotonnost()
+{
+    if (arr[0] < arr[1])
+    {
+        printf("Narastvashta redica\n");
+    }
+    else if (arr[0] > arr[1])
+    {
+        printf("Namalqvashta redica\n");
+    }
+    else
+    {
+        printf("Chislovata redica ne e homogenna\n");
+    }
+}
