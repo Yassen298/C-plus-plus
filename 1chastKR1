@@ -1,0 +1,98 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+#define N 100  
+void display(int arr[], int narr);
+void bblsort(int x[], int nx);
+int max_elem(int arr[], int narr);
+
+
+int main()
+{
+	int a[N];
+	int b[N]; 
+
+	int na, i;
+
+	int index;
+
+	printf("Vuvedete broi elementi na masiva na =");
+	scanf("%d", &na);
+
+	for (i = 0; i < na; i++)
+	{
+		printf("\nEnter element %d = ", i);
+		scanf("%d", &a[i]);
+	}
+	
+
+	printf("\n Masiv A:");
+	display(a, na); // obryshtenie 
+
+//	printf("\n Sorting array A:");
+//	bblsort(a, na);
+//	display(a, na);
+
+	index = max_elem(a, na);
+
+	printf("\n Max element masiv a = %d, index = %d\n", a[index], index);
+
+	for (i = 0; i < index; i++)
+	{
+		b[i] = a[i];
+	}
+
+	printf("\n Masiv B:");
+	display(b, index);
+
+	printf("\n Sorting array B:");
+	bblsort(b, index);
+	display(b, index);
+
+	system("pause");
+	return 0;
+}
+
+void display(int arr[], int narr)
+{
+	int k;
+	for (k = 0; k < narr; k++)
+	{
+		printf("\n Element [%d] = %d", k, arr[k]);
+	}
+	printf("\n");
+}
+
+void bblsort(int x[], int nx) // metod na mehurcheto BUBBLESORT
+{
+	int k, m, temp;
+	for (k = 1; k < nx; k++)
+		for (m = nx - 1; m >= k; m--)
+		{
+			if (x[m - 1] > x[m])  // razmiana na elementi
+			{
+				temp = x[m - 1];
+				x[m - 1] = x[m];
+				x[m] = temp;
+			}
+		}
+}
+
+int max_elem(int arr[], int narr)
+{
+	int max, index;
+	int k;
+	max = arr[0];
+	index = 0;
+	for (k = 0; k < narr; k++)
+	{
+		if (arr[k] > max)
+		{
+			max = arr[k];
+			index = k;
+		}
+	}
+	return index;
+}
